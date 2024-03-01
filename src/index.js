@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Containers/Home';
+import Home from './src/Container/home';
 import { createRoot } from 'react-dom/client';
 import GlobalStyle from './style/globalStyle.js';
 
