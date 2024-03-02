@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import axios from 'axios';
-import People from '../../Assets/people.svg';
+import Faces from '../../Assets/faces.svg';
 import Arrow from '../../Assets/arrow.svg';
 
 
@@ -15,7 +15,7 @@ import {
   
 } from "./styles";
 
-function App() {
+function Users() {
   const [users, setUsers] = useState([]);
   const inputName = useRef();
   const inputAge = useRef();
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <Container>
-      <Image alt="logo-imagem" src={People} />
+      <Image alt="logo-imagem" src={Faces} />
       <ContainerItens>
         <H1>Olá</H1>
         <InputLabel>Nome</InputLabel>
@@ -53,4 +53,4 @@ function App() {
   );
 }
 
-export default App;
+export default Users;
