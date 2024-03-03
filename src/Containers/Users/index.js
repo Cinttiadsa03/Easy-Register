@@ -7,24 +7,29 @@ import Arrow from '../../Assets/arrow.svg';
 import Trash from '../../Assets/trash3.svg';
 
 
+
+
 import {
   Container,
   H1,
   Image,
   ContainerItens,
   Button,
-  User,
+  User
+  
 
   
-} from "./styles";
+} from "./style";
 
 function  Users() {
   const [users, setUsers] = useState([]);
+
  
     useEffect(() => {
       async function fetchUsers() {
         
           const { data: newUsers } = await axios.get("http://localhost:3001/users");
+
           setUsers(newUsers);
     }
   
@@ -34,7 +39,7 @@ function  Users() {
 
     async function deleteUser(userId) {
       
-        await axios.delete("http://localhost:3001/users/${userId}");
+        await axios.delete(`http://localhost:3001/users/${userId}`);
 
         const newUsers = users.filter((user)=> user.id !== userId);
 
@@ -47,22 +52,24 @@ function  Users() {
     <Container>
       <Image alt="logo-imagem" src={Faces} />
       <ContainerItens>
+
         <H1>Usuários</H1>
+
     <ul> 
       {users.map((user) => (
         <user key={user.id}>
         <p>{user.name}</p> <p>{user.age}</p>
         <button onClick={() => deleteUser(user.id)}>
-          <img src={Trash3} alt="lata-de-lixo"/>
+          <img src={Trash} alt="lata-de-lixo"/>
           
           </button>
       </user>
       ))}
   </ul>
 
-    <button>
-    <img alt="seta" src={Arrow} />Voltar
-    </button>
+    <Button>
+    < img alt="seta" src={Arrow} />Voltar
+    </Button>
        
       </ContainerItens>
     </Container>

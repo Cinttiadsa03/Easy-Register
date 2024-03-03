@@ -9,8 +9,6 @@ flex-direction:column;
 align-items: center;
 gap: 40px;
 
-
-
 `;
 
 export const Image = styled.img`
@@ -45,7 +43,6 @@ line-height: 40px;
 text-align: center;
 margin-bottom:80px;
 color:#ffff
-
 
 `;
 

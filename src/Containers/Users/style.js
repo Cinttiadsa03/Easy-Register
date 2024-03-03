@@ -1,13 +1,15 @@
 import styled from 'styled-components'
-import Background from '../../Assets/background2.svg'
+import Background from '../../Assets/background1.svg'
 
 export const Container = styled.div`
-background: url("${Background2}");
+background: url("${Background}");
 background-size: cover;
+
 display:flex;
 flex-direction:column;
 align-items: center;
 gap: 40px;
+
 
 
 
@@ -29,14 +31,15 @@ rgba(255,255,255,0.15)100%
 
 border-radius: 61px 61px 0px 0px;
 backdrop-filter:blur(45px);
+
 padding: 50px 36px;
+
 display:flex;
 flex-direction:column;
+
 height:100vh;
 
 `;
-
-
 export const H1 = styled.h1`
 
 font-family: Roboto;
@@ -45,6 +48,7 @@ font-weight: 700;
 line-height: 40px;
 text-align: center;
 margin-bottom:80px;
+
 color:#ffff
 
 
@@ -52,9 +56,10 @@ color:#ffff
 
 export const Button = styled.button`
 
-width:348px;
-height:58px;
+width:342px;
+height:74px;
 margin-top:120px;
+
 border:1px solid;
 
 
@@ -62,8 +67,8 @@ background: transparent;
 border-radius:14px;
 font-style: normal;
 font-weight: bold;
-font-size:18px;
-line-height:20px;
+font-size:17px;
+line-height:28px;
 
 
 color:#ffffff;
@@ -84,6 +89,6 @@ opacity:0.5;
 }
 
 img{
-    transform: rotatey(180deg);
+    transform: rotateY(180deg);
 }
 `;
