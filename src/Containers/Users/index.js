@@ -9,18 +9,19 @@ import Trash from '../../Assets/trash3.svg';
 
 
 
-import { H1 } from "../../components/Title/style";
-import { ContainerItens } from "../../components/ContainerItens";
-import { Button } from "../../components/Button";
+import  H1  from "../../components/Title";
+import ContainerItens  from "../components/ContainerItens";
+import  Button  from "../components/Button";
 
 import {
+  
   Container,
   Image,
   User
   
 
   
-} from "./style";
+} from './style';
 
 function  Users() {
   const [users, setUsers] = useState([]);

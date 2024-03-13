@@ -7,9 +7,9 @@ height:58px;
 margin-top:130px;
 
 
-background:${props => props.isBack ? 'transparent':'rgba(0, 0, 0, 0.8)'};
-border: ${ props => props.isBack ? '1px solid #ffffff' : 'none'};
+background: ${props => props.isBack ? 'transparent':'rgba(0, 0, 0, 0.8)'};
 border-radius:14px;
+border: ${ props => props.isBack ? '1px solid #ffffff' : 'none'};
 
 font-style: normal;
 font-weight: bold;

@@ -31,11 +31,11 @@ width: 348px;
 height:58px;
 border: none;
 outline:none;
-    font-style:normal;
-    font-weight:normal;
-    font-size:20px;
-    line-height:28px;
-    color:#ffffff
+font-style:normal;
+font-weight:normal;
+font-size:20px;
+line-height:28px;
+color:#ffffff
 
 `;
 
