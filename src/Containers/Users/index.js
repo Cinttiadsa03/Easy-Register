@@ -1,5 +1,5 @@
 import React, {  useState, useEffect } from "react";
-
+import { useNavigate } from "react-router"
 import axios from 'axios';
 
 import Faces from '../../Assets/faces.svg';
@@ -9,12 +9,13 @@ import Trash from '../../Assets/trash3.svg';
 
 
 
+import { H1 } from "../../components/Title/style";
+import { ContainerItens } from "../../components/ContainerItens";
+import { Button } from "../../components/Button";
+
 import {
   Container,
-  H1,
   Image,
-  ContainerItens,
-  Button,
   User
   
 
@@ -24,6 +25,9 @@ import {
 function  Users() {
   const [users, setUsers] = useState([]);
 
+  const navigate = useNavigate()
+
+ 
  
     useEffect(() => {
       async function fetchUsers() {
@@ -46,12 +50,15 @@ function  Users() {
         setUsers(newUsers);
 
       } 
-    
+
+    function goBackPage(){
+      navigate('/')
+    }
 
   return (
     <Container>
       <Image alt="logo-imagem" src={Faces} />
-      <ContainerItens>
+      <ContainerItens isBlur={true}>
 
         <H1>Usuários</H1>
 
@@ -68,7 +75,7 @@ function  Users() {
       ))}
   </ul>
 
-    <Button>
+    <Button isBack={true} onClick={goBackPage}>
     < img alt="seta" src={Arrow} />Voltar
     </Button>
        
