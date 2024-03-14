@@ -1,4 +1,4 @@
-import React, {  useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router"
 import axios from 'axios';
 
@@ -6,55 +6,44 @@ import Faces from '../../Assets/faces.svg';
 import Arrow from '../../Assets/arrow.svg';
 import Trash from '../../Assets/trash3.svg';
 
+import H1 from "../../components/Title";
+import ContainerItens from "../../components/ContainerItens";
+import Button from "../../components/Button";
 
+import { Container, Image, User } from './styles';
 
-
-import  H1  from "../../components/Title";
-import ContainerItens  from "../components/ContainerItens";
-import  Button  from "../components/Button";
-
-import {
-  
-  Container,
-  Image,
-  User
-  
-
-  
-} from './style';
-
-function  Users() {
+function Users() {
   const [users, setUsers] = useState([]);
 
   const navigate = useNavigate()
 
- 
- 
-    useEffect(() => {
-      async function fetchUsers() {
-        
-          const { data: newUsers } = await axios.get("http://localhost:3001/users");
 
-          setUsers(newUsers);
+
+  useEffect(() => {
+    async function fetchUsers() {
+
+      const { data: newUsers } = await axios.get("http://localhost:3001/users");
+
+      setUsers(newUsers);
     }
-  
-      fetchUsers();
-    }, []);
+
+    fetchUsers();
+  }, []);
 
 
-    async function deleteUser(userId) {
-      
-        await axios.delete(`http://localhost:3001/users/${userId}`);
+  async function deleteUser(userId) {
 
-        const newUsers = users.filter((user)=> user.id !== userId);
+    await axios.delete(`http://localhost:3001/users/${userId}`);
 
-        setUsers(newUsers);
+    const newUsers = users.filter((user) => user.id !== userId);
 
-      } 
+    setUsers(newUsers);
 
-    function goBackPage(){
-      navigate('/')
-    }
+  }
+
+  function goBackPage() {
+    navigate('/')
+  }
 
   return (
     <Container>
@@ -63,26 +52,26 @@ function  Users() {
 
         <H1>Usuários</H1>
 
-    <ul> 
-      {users.map((user) => (
-        <User key={user.id}>
-        <p>{user.name}</p> <p>{user.age}</p>
+        <ul>
+          {users.map((user) => (
+            <User key={user.id}>
+              <p>{user.name}</p> <p>{user.age}</p>
 
-        <button onClick={() => deleteUser(user.id)}>
-          <img src={Trash} alt="lata-de-lixo"/>
-          
-          </button>
-      </User>
-      ))}
-  </ul>
+              <button onClick={() => deleteUser(user.id)}>
+                <img class="lala" src={Trash} alt="lata-de-lixo" />
 
-    <Button isBack={true} onClick={goBackPage}>
-    < img alt="seta" src={Arrow} />Voltar
-    </Button>
-       
+              </button>
+            </User>
+          ))}
+        </ul>
+
+        <Button isBack={true} onClick={goBackPage}>
+          < img alt="seta" src={Arrow} />Voltar
+        </Button>
+
       </ContainerItens>
     </Container>
-);
+  );
 }
 
 export default Users;

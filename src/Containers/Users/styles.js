@@ -14,6 +14,8 @@ gap: 40px;
 height:100%;
 min-height:100vh;
 
+
+
 `;
 
 
@@ -41,6 +43,8 @@ color:#ffffff
 
 export const Image = styled.img`
 margin-top: 30px;
+
+
 
 
 `;

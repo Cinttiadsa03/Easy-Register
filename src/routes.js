@@ -2,7 +2,7 @@ import React from 'react';
 import {  BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
-import Home from './Containers/Home'
+import Home from './Containers/Home/Index'
 import Users from './Containers/Users'
 
 function MyRoutes(){
